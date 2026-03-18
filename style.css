@@ -13,16 +13,20 @@
 }
 
 body {
-  background-color: var(--background-color);
-  background-image: linear-gradient(315deg, var(--background-color) 0%, var(--secondary-background-color) 100%);
+ body {
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", sans-serif;
+  /* 淡蓝色渐变 + 云朵纹理 */
+  background: linear-gradient(135deg, #f0f8ff 0%, #e0f0ff 50%, #d0e8ff 100%);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="cloud"><feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7"/><feBlend in="SourceGraphic" mode="screen"/></filter><rect width="100%" height="100%" filter="url(%23cloud)" opacity="0.3"/></svg>');
+  background-attachment: fixed;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   overflow: hidden;
-  margin: 0;
 }
 
 h1 button {
@@ -223,4 +227,10 @@ p {
   padding: 0.75rem;
   width: 31.25rem;
   max-width: 90%;
+}
+[data-viewport] > div {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 20px !important;
 }
